@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "77ed4fc6-2c2e-4342-9aa4-0b8730d6a5b2",
+		"name": "CURSO NODE FH",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13082746"
+	},
+	"item": [
+		{
+			"name": "get users paginate",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NmJiYTcyODJmYmM1ZDNlZjI2MDYyMGEiLCJyb2xlIjoiQURNSU5fUk9MRSIsImlhdCI6MTcyMzY1NTU1OCwiZXhwIjoxNzIzNjY5OTU4fQ._itxG7pgKGfoMx5pJtFgbPwsVKMdD3HNB7wrekBKJ0I",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"PruebaEdit\",\n    \"email\":\"prueba10@gmail.com\",\n    \"password\":\"123456\",\n    \"role\": \"ADMIN_ROLE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users?limit=11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "11"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"PruebaEdit\",\n    \"email\":\"prueba11@gmail.com\",\n    \"password\":\"123456\",\n    \"role\": \"ADMIN_ROLE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Prueba11Edit\",\n    \"email\":\"prueba11@gmail.com\",\n    \"password\":\"123456\",\n    \"role\": \"ADMIN_ROLE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/66bbaa18f6a3c3266576b36e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"66bbaa18f6a3c3266576b36e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete/inactivate user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/66bb918612ee24a52fe4e1a5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"66bb918612ee24a52fe4e1a5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
