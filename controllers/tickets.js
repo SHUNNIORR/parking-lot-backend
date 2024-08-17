@@ -12,7 +12,7 @@ const createTicket = async (req, res) => {
       .json({ message: "Ticket with this plate already exists" });
   }
 
-  const ticket = new Ticket({plate, typeOfVehicle});
+  const ticket = new Ticket({ plate, typeOfVehicle });
 
   await ticket.save();
   res.json({ msg: "Ticket created", ticket });
@@ -21,20 +21,34 @@ const createTicket = async (req, res) => {
 const closeTicket = async (req, res) => {
   const { plate } = req.body;
 
-  const plateTicketAlreadyExists = await Ticket.findOne({ plate });
+  const plateTicketAlreadyExists = await Ticket.findOne({
+    plate,
+    active: true,
+  });
 
   if (!plateTicketAlreadyExists && !plateTicketAlreadyExists.active) {
     return res
       .status(400)
-      .json({ message: "Ticket with this plate doesnt exists or its not active" });
+      .json({
+        message: "Ticket with this plate doesnt exists or its not active",
+      });
   }
   plateTicketAlreadyExists.departureTime = new Date();
   plateTicketAlreadyExists.active = false;
-  plateTicketAlreadyExists.fee = calculateParkingFee(plateTicketAlreadyExists.arrivalTime,new Date()),
-  
-  console.log('Ticket with this plate already exists', plateTicketAlreadyExists)
-  const ticket = await Ticket.findByIdAndUpdate(plateTicketAlreadyExists._id,plateTicketAlreadyExists, {new: true})
-  res.json({ msg: `Ticket for vehicle ${plateTicketAlreadyExists.plate} has been closed`,ticket });
+  plateTicketAlreadyExists.fee = calculateParkingFee(
+    plateTicketAlreadyExists.arrivalTime,
+    new Date()
+  );
+
+  const ticket = await Ticket.findByIdAndUpdate(
+    plateTicketAlreadyExists._id,
+    plateTicketAlreadyExists,
+    { new: true }
+  );
+  res.json({
+    msg: `Ticket for vehicle ${plateTicketAlreadyExists.plate} has been closed`,
+    ticket,
+  });
 };
 
-module.exports = { createTicket, closeTicket};
+module.exports = { createTicket, closeTicket };
