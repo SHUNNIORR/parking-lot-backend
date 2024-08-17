@@ -1,21 +1,10 @@
 const { Router } = require("express");
-const {
-  usersGet,
-  usersPost,
-  usersPut,
-  usersDelete,
-} = require("../controllers/users");
 const { check } = require("express-validator");
 const validateFields = require("../middlewares/validate-fields");
-const {
-  isValidRole,
-  emailExists,
-  existUserById,
-} = require("../helpers/db-validators");
-const login = require("../controllers/auth");
-const validateJwt = require("../helpers/validate-jwt");
+const {login,googleSignIn} = require("../controllers/auth");
 
 const router = Router();
+
 router.post(
   "/login",
   [
@@ -25,6 +14,15 @@ router.post(
     validateFields,
   ],
   login
+);
+
+router.post(
+  "/google",
+  [
+    check("id_token", "Id token is required").not().isEmpty(),
+    validateFields,
+  ],
+  googleSignIn
 );
 
 module.exports = router;

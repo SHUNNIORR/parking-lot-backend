@@ -3,7 +3,7 @@ const User = require("../models/user");
 const isValidRole = async (role = "") => {
   const existsRole = await Role.findOne({ role });
   if (!existsRole) {
-    
+    throw new Error(`The role: ${ role } does not exist in the BD`);
   }
 };
 
