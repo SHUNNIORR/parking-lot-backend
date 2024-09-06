@@ -1,5 +1,10 @@
-function calculateParkingFee(startDate, endDate) {
-    const halfHourCost = 700; // Cost per half hour
+function calculateParkingFee(typeOfVehicle,startDate, endDate) {
+    const halfHourCost=0; // Cost per half hour
+    if(typeOfVehicle ==='MOTORCYCLE'){
+        halfHourCost = 700;
+    }else if(typeOfVehicle ==='CAR'){
+        halfHourCost = 1500;
+    }
     const millisecondsPerHalfHour = 30 * 60 * 1000; // 30 minutes in milliseconds
 
     // Convert strings to Date objects

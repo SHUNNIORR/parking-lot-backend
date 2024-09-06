@@ -27,11 +27,9 @@ const closeTicket = async (req, res) => {
   });
 
   if (!plateTicketAlreadyExists && !plateTicketAlreadyExists.active) {
-    return res
-      .status(400)
-      .json({
-        message: "Ticket with this plate doesnt exists or its not active",
-      });
+    return res.status(400).json({
+      message: "Ticket with this plate doesnt exists or its not active",
+    });
   }
   plateTicketAlreadyExists.departureTime = new Date();
   plateTicketAlreadyExists.active = false;
