@@ -1,3 +1,4 @@
+const { response, request } = require("express");
 const calculateParkingFee = require("../helpers/tickets/tickets-utils");
 const Ticket = require("../models/ticket");
 
@@ -17,7 +18,14 @@ const createTicket = async (req, res) => {
   await ticket.save();
   res.json({ msg: "Ticket created", ticket });
 };
-
+const getActiveTickets = async (req = request, res = response) => {
+  const query = { active: true };
+  const [total, tickets] = await Promise.all([
+    Ticket.countDocuments(query),
+    Ticket.find(query),
+  ]);
+  res.json({ total, tickets });
+};
 const closeTicket = async (req, res) => {
   const { plate } = req.body;
 
@@ -49,4 +57,4 @@ const closeTicket = async (req, res) => {
   });
 };
 
-module.exports = { createTicket, closeTicket };
+module.exports = { createTicket, closeTicket, getActiveTickets };

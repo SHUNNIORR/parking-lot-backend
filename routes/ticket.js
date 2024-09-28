@@ -3,9 +3,10 @@ const { check } = require("express-validator");
 const validateJwt = require("../helpers/validate-jwt");
 const { isAdmin } = require("../helpers/validate-roles");
 const validateFields = require("../middlewares/validate-fields");
-const { createTicket,closeTicket } = require("../controllers/tickets");
+const { createTicket,closeTicket, getActiveTickets } = require("../controllers/tickets");
 const router = Router();
 
+router.get("/actives",[validateJwt], getActiveTickets);
 router.post(
   "/create",
   [
