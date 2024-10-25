@@ -4,6 +4,7 @@ const {
   usersPost,
   usersPut,
   usersDelete,
+  createRole
 } = require("../controllers/users");
 const { check } = require("express-validator");
 const validateFields = require("../middlewares/validate-fields");
@@ -21,7 +22,6 @@ router.get("/",
 router.post(
   "/",
   [
-    validateJwt,
     check("name", "name is empty").not().isEmpty(),
     check("email", "email is not valid").isEmail(),
     check("email").custom(emailExists),
@@ -31,6 +31,7 @@ router.post(
   ],
   usersPost
 );
+router.post("/role",[ check("role").not().isEmpty()],createRole)
 router.put(
   "/:id",
   [ 

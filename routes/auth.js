@@ -25,4 +25,8 @@ router.post(
   googleSignIn
 );
 
+router.get('/', (req, res) => {
+  res.send('Hola mundo');
+});
+
 module.exports = router;

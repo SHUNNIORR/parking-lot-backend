@@ -1,5 +1,6 @@
 const { response } = require("express");
 const User = require("../models/user");
+const Role = require("../models/role");
 const bcryptjs = require("bcryptjs");
 const usersGet = async(req, res = response) => {
   const { limit=5, skip=0 } = req.query;
@@ -44,9 +45,18 @@ const usersDelete = async(req, res) => {
   res.json(user);
 }; 
 
+const createRole = async(req, res) => {
+  const role = req.body;
+  const roleDB = new Role(role);
+
+  await roleDB.save();
+  res.json({ msg: "post API - controlador", User: roleDB });
+}
+
 module.exports = {
   usersGet,
   usersPost,
   usersDelete,
   usersPut,
+  createRole
 };
