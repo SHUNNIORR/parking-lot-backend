@@ -2,6 +2,8 @@ const express = require("express");
 
 const cors = require("cors");
 const dbConnection = require("../database/config");
+const vehicleType = require("./vehicle-type");
+const role = require("./role");
 
 class Server {
   constructor() {
@@ -19,6 +21,22 @@ class Server {
 
     // rutas de mi app
     this.routes();
+
+    // create roles
+    async function createRoles() {
+      await role.create({role:'ADMIN_ROLE'});
+      await role.create({role:'USER_ROLE'});
+    }
+    createRoles();
+
+    // create vehicle types
+    async function createVehicleTypes() {
+      await vehicleType.create({ type: 'CAR' });
+      await vehicleType.create({ type: 'MOTORCYCLE' });
+      await vehicleType.create({ type: 'TRUCK' });
+    }
+    
+    //createVehicleTypes();
   }
 
   async connectDb(){
@@ -30,7 +48,7 @@ class Server {
 
     this.app.use(express.json())
 
-    this.app.use(express.static("public"));
+    //this.app.use(express.static("public"));
   }
   routes() {
     this.app.use(this.authRoutePath, require("../routes/auth"));

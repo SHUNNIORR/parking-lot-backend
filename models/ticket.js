@@ -6,9 +6,9 @@ const TicketSchema = Schema({
         required: [true,'Placa de auto requerida.']
     },
     typeOfVehicle: {
-        type: String,
-        required: [true,'Tipo de vehiculo requerido.'],
-        emun:['CAR', 'MOTORCYCLE'],
+        type: Schema.Types.ObjectId,
+        ref: 'VehicleType', // Referencia al esquema VehicleType
+        required: [true, 'Tipo de vehículo requerido.'],
     },
     arrivalTime:{
         type: Date,
