@@ -15,25 +15,25 @@ Adicionalmente fue contenido usando docker para un despliege mas sencillo.
     <li>
         <p>
             Node.js
+            <img src="https://www.svgrepo.com/show/303360/nodejs-logo.svg" alt="node.js" width="25" height="25" />
         </p>
-            <img src="https://www.svgrepo.com/show/303360/nodejs-logo.svg" alt="node.js" width="50" height="50" />
     </li>
     <li>
         <p>
             Express
+            <img src="https://static.cdnlogo.com/logos/e/23/express.svg" alt="Express" width="25" height="25" />        
         </p>
-            <img src="https://static.cdnlogo.com/logos/e/23/express.svg" alt="Express" width="50" height="50" />        
     </li>
     <li>
         <p>
             Mongo DB
-        </p>
             <img src="https://www.svgrepo.com/show/373845/mongo.svg" alt="Mongo DB" width="25" height="25" />       
+        </p>
     </li>
     <li>
         <p>
             Docker
-        </p>
             <img src="https://www.svgrepo.com/show/452192/docker.svg" alt="Docker" width="25" height="25" />
+        </p>
     </li>
 </ul>
