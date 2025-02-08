@@ -11,13 +11,6 @@ Adicionalmente fue contenido usando docker para un despliege mas sencillo.
 - calculo de costo del ticket en base al tiempo transcurrido desde la entrada
 
 ## Tecnologías utilizadas
-<p align="left">
-    <img src="https://www.svgrepo.com/show/303360/nodejs-logo.svg" alt="node.js" width="25" height="25" />
-    <img src="https://static.cdnlogo.com/logos/e/23/express.svg" alt="Express" width="25" height="25" />
-    <img src="https://www.svgrepo.com/show/373845/mongo.svg" alt="Mongo DB" width="25" height="25" />
-    <img src="https://www.svgrepo.com/show/452192/docker.svg" alt="Docker" width="25" height="25" />
-</p>
-
 <ul>
     <li>
         <p>
