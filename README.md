@@ -17,3 +17,10 @@ Adicionalmente fue contenido usando docker para un despliege mas sencillo.
     <img src="https://www.svgrepo.com/show/373845/mongo.svg" alt="Mongo DB" width="25" height="25" />
     <img src="https://www.svgrepo.com/show/452192/docker.svg" alt="Docker" width="25" height="25" />
 </p>
+
+<ul>
+    <li>
+    <p>Node.js</p>
+    <img src="https://www.svgrepo.com/show/303360/nodejs-logo.svg" alt="node.js" width="25" height="25" />
+    </li>
+</ul>
