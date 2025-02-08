@@ -1,4 +1,4 @@
-# Aplicación web Backend Parking Lot
+# 🚗 Aplicación web Backend Parking Lot 🚗
 
 Este repositorio contiene el código fuente de una aplicación backend hecha con NODE.JS/EXPRESS que sirve para gestionar un parqueadero, sus entradas, salidas de vehiculos y autenticacion y autorizacion de usuarios por roles con JWT.
 
