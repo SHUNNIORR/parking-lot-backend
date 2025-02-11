@@ -37,3 +37,27 @@ Adicionalmente fue contenido usando docker para un despliege mas sencillo.
         </p>
     </li>
 </ul>
+
+## Despliegue en AWS ECS
+
+Se desplegó el servicio usando ecs registrando la imagen, creando el cluster, su servicio y su tarea.
+
+Evidencias:
+
+Repositorio:
+![Repositorio](public/deploy/1-repositorio-creado.png)
+
+Imagen de docker creada en aws
+![Imagen de docker creada en aws](public/deploy/2-imagen-creada.png)
+
+Cluster
+![Cluster](public/deploy/3-cluster.png)
+
+Servicio de cluster
+![Servicio de cluster](public/deploy/4-servicio.png)
+
+Tarea ejecutandose
+![Tarea ejecutandose](public/deploy/5-task.png)
+
+Ejecucion exitosa usando el ip publica que nos entrega la task
+![Ejecucion exitosa usando el ip publica que nos entrega la task](public/deploy/6-prueba.jpeg)
